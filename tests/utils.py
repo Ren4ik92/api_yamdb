@@ -247,7 +247,7 @@ def create_titles(admin_client):
 def create_reviews(admin_client, authors_map):
     titles, _, _ = create_titles(admin_client)
     result = []
-    text = 'review number {}'
+    text = 'reviews number {}'
     for idx, (user, user_client) in enumerate(authors_map.items(), 1):
         response = create_single_review(
             user_client, titles[0]['id'], text.format(idx), 5
@@ -284,7 +284,7 @@ def create_comments(admin_client, authors_map):
 def check_fields(obj_type, url_pattern, obj, expected_data, detail=False):
     obj_types = {
         'comment': 'комментария(ев) к отзыву',
-        'review': 'отзыва(ов)'
+        'reviews': 'отзыва(ов)'
     }
     results_in_msg = ' в ключе `results`'
     if detail:

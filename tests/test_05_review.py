@@ -203,7 +203,7 @@ class Test05ReviewAPI:
             'об отзывах. В ответе на запрос не обнаружен текст отзыва.'
         )
         check_fields(
-            'review', '/api/v1/titles/{title_id}/reviews/',
+            'reviews', '/api/v1/titles/{title_id}/reviews/',
             review, expected_data
         )
 
@@ -244,7 +244,7 @@ class Test05ReviewAPI:
             key: value for key, value in reviews[0].items() if key != 'id'
         }
         check_fields(
-            'review', url_template, review, expected_data, detail=True
+            'reviews', url_template, review, expected_data, detail=True
         )
 
     def test_04_review_detail_user(self, admin_client, admin, user,
